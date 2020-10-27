@@ -1,0 +1,72 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+# acmvup
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of acmvup is to provide some useful functions are implemented following the additive covariance modeling via unconstrained parametrization. 
+
+## Installation
+
+You can install the released version of acmvup from [CRAN](https://CRAN.R-project.org) with:
+
+``` r
+install.packages("acmvup")
+```
+
+## Example
+
+This is a basic example which shows you how to compute the log-likelihood function value, gradient and hessian
+
+```{r example}
+library(acmvup)
+set.seed(1234)
+# Let generate synthetic data, using p = 3
+data <- matrix(rnorm(300), ncol=3)
+
+# Then we need the lists containing the covariates for all the
+# unconstrained parameters that we want to model
+lista_d <- list()
+lista_phi <- list()
+
+lista_d[[1]] <- matrix(c(rep(1,100),rnorm(100)), byrow = FALSE, ncol=2)
+lista_d[[2]] <- matrix(c(rep(1,100),rnorm(200)), byrow = FALSE, ncol=3)
+lista_d[[3]] <- matrix(rep(1,100), byrow = FALSE, ncol=1)
+
+lista_phi[[1]] <- matrix(c(rep(1,100),rnorm(200)),byrow = FALSE, ncol=3)
+lista_phi[[2]] <- matrix(rep(1,100),ncol=1)
+lista_phi[[3]] <- matrix(c(rep(1,100),rnorm(100)),byrow = FALSE, ncol=2)
+
+```
+
+Now we are able to use the functions implemented in the package to compute the log-likelihood function value, gradient and hessian, for instance in a suitable random point
+```{r}
+par <- rnorm(12)
+
+ll <- optimal_loglik(par,data,lista_phi,lista_d)
+gll <- optimal_grad(par,data,lista_phi,lista_d)
+hll <- optimal_hessian(par,data,lista_phi,lista_d)
+```
+Therefore for our example
+
+```{r}
+print(paste0("The log-likelihood value is ",ll))
+print("The gradient vector is ")
+gll
+print("The hessian matrix is ")
+hll
+```
+

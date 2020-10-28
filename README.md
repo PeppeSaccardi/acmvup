@@ -7,17 +7,18 @@
 
 <!-- badges: end -->
 
-The goal of acmvup is to provide some useful functions are implemented
-following the additive covariance modeling via unconstrained
-parametrization.
+The goal of acmvup is to provide some useful functions that are
+implemented following the additive covariance modeling via unconstrained
+parametrization idea. You will find more detail in my master thesis.
 
 ## Installation
 
 You can install the released version of acmvup from
-[CRAN](https://CRAN.R-project.org) with:
+[Github](https://github.com/PeppeSaccardi/acmvup) with:
 
 ``` r
-install.packages("acmvup")
+library("devtools)
+install_github("PeppeSaccardi/acmvup")
 ```
 
 ## Example

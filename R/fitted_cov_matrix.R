@@ -11,7 +11,7 @@
 #' element we are interested in retrive the Covariance matrix
 #'
 #'
-#' @return Log-Likelihood value
+#' @return Fitted covariance matrix
 #' @export
 #'
 #' @examples

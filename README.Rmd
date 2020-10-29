@@ -24,7 +24,7 @@ The goal of acmvup is to provide some useful functions that are implemented foll
 You can install the released version of acmvup from [Github](https://github.com/PeppeSaccardi/acmvup) with:
 
 ``` r
-library("devtools)
+library("devtools")
 install_github("PeppeSaccardi/acmvup")
 ```
 

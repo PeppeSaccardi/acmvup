@@ -17,7 +17,7 @@ You can install the released version of acmvup from
 [Github](https://github.com/PeppeSaccardi/acmvup) with:
 
 ``` r
-library("devtools)
+library("devtools")
 install_github("PeppeSaccardi/acmvup")
 ```
 

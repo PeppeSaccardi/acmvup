@@ -16,7 +16,7 @@ element we are interested in retrive the Covariance matrix}
 element we are interested in retrive the Covariance matrix}
 }
 \value{
-Log-Likelihood value
+Fitted covariance matrix
 }
 \description{
 This function compute the covariancce matrix using the optimal parameters

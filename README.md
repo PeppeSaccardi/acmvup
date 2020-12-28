@@ -4,7 +4,7 @@
 # acmvup
 
 <!-- badges: start -->
-
+[![License](https://badgen.net/github/license/PeppeSaccardi/acmvup)](LICENSE)
 <!-- badges: end -->
 
 The goal of acmvup is to provide some useful functions that are
